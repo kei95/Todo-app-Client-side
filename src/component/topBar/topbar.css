@@ -1,0 +1,19 @@
+.topbar {
+    position: fixed;
+    top: 0;
+    display: flex;
+    padding: 0 12vw;
+    justify-content: center;
+    /* justify-content: space-between; */
+    align-items: center;
+    width: 100%;
+    height: 5vh;
+    background-color: #c4b79f;
+    border-bottom: 1px solid #c4b79f;
+    box-sizing: border-box;
+}
+
+.text {
+    font-weight: 'bold';
+    font-size: large;
+}

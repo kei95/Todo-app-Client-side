@@ -1,0 +1,26 @@
+.cardWrapper {
+    display: flex;
+    flex-direction: column;
+    background-color: #938771;
+    border-bottom: 2px solid #c4b79f;
+    width: 76vw;
+    padding: 0 12vw;
+}
+
+.title {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 80vw;
+    font-size: 1.1em;
+}
+
+.clickedTitle {
+    font-size: 1.1em;
+    width: 80vw;
+    word-wrap: break-word;
+}
+
+.todo-text {
+    font-size: 1.1em;
+    width: 80vw;
+}
