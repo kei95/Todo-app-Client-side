@@ -25,15 +25,24 @@
     100% {height: 10vh;}
 }
 
+@keyframes close {
+    0%   {height: 10vh;}
+    100% {height: 0vh;}
+}
+
 @keyframes fadeIn {
     0%   {opacity: 0;}
     100% {opacity: 1;}
 }
 
+@keyframes fadeOut {
+    0%   {opacity: 1;}
+    100% {opacity: 0;}
+}
+
 .todo-text {
     display: flex;
     flex-direction: row;
-    border-top: 1.5px solid #c4b79f;
     font-size: 1.1em;
     width: 80vw;
     height: 10vh;
@@ -42,9 +51,42 @@
     animation-duration: 0.5s;
 }
 
+.todo-text-closed {
+    display: flex;
+    width: 80vw;
+    height: 0vh;
+    font-size: 1.1em;
+    position: relative;
+    animation-name: close;  
+    animation-duration: 0.5s;
+}
+
+.border {
+    border: 1px solid #c4b79f;
+    position: relative;
+    animation-name: fadeIn;  
+    animation-duration: 0.8s;
+}
+
+.border-closed {
+    border: 1px solid #c4b79f;
+    opacity: 0;
+    position: relative;
+    animation-name: fadeOut;  
+    animation-duration: 0.2s;
+}
+
 .taskText {
     align-self: center;
     position: relative;
     animation-name: fadeIn;
     animation-duration: 0.8s;
+}
+
+.taskText-closed {
+    align-self: center;
+    position: relative;
+    opacity: 0;
+    animation-name: fadeOut;
+    animation-duration: 0.3s;
 }

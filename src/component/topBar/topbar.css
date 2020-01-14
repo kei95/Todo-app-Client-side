@@ -11,6 +11,7 @@
     background-color: #c4b79f;
     border-bottom: 1px solid #c4b79f;
     box-sizing: border-box;
+    z-index: 999;
 }
 
 .text {

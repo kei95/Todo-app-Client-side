@@ -22,7 +22,8 @@ export default class App extends React.Component {
 
   
   render(){
-    const card = this.state.tasks.map(data =><div id={data.id}><Card title={data.title} text={data.text}/></div>)
+    // const card = this.state.tasks.map(data =><div id={data.id}><Card title={data.title} text={data.text}/></div>)
+    const card = data.map(data =><div id={data.id}><Card title={data.title} text={data.text}/></div>)
     console.log(this.state)
     return (
       <div className="App">

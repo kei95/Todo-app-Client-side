@@ -9,10 +9,10 @@ const Card = (props) => {
                 <div onClick={()=> toggleClick(!clicked)}>
                     <p className={clicked ? 'clickedTitle' :  "title"}>{props.title}</p>
                 </div>
-                {clicked && 
-                <div className='todo-text'>
-                    <p className="taskText"><span style={{fontStyle: 'italic'}}>Task: {' '}</span>{props.text}</p>
-                </div>}
+                <span className={clicked ? 'border' : 'border-closed'}/>
+                <div className={clicked ? 'todo-text' : 'todo-text-closed'}>
+                    <p className={clicked ? "taskText": "taskText-closed"}><span style={{fontStyle: 'italic'}}>Task: {' '}</span>{props.text}</p>
+                </div>
             </div>
         )
 }
