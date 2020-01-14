@@ -14,3 +14,10 @@
 .cardsWrapper {
   flex-direction: column;
 }
+
+.noTaskWrapper{
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+}

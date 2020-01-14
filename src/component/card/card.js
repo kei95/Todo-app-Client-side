@@ -11,8 +11,7 @@ const Card = (props) => {
                 </div>
                 {clicked && 
                 <div className='todo-text'>
-                    <p>Task: </p>
-                    <p>{props.text}</p>
+                    <p className="taskText"><span style={{fontStyle: 'italic'}}>Task: {' '}</span>{props.text}</p>
                 </div>}
             </div>
         )

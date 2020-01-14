@@ -12,6 +12,7 @@ export default class App extends React.Component {
 
   componentDidMount = async() => {
     await this.getTodos();
+    console.log(window.innerWidth)
   }
 
   getTodos = async () => {
@@ -27,9 +28,16 @@ export default class App extends React.Component {
       <div className="App">
         <Topbar />
         <div className='body'>
+          {
+            !card ?
+            <div className="noTaskWrapper">
+              <p>You have no task yet!</p>
+            </div>
+            : 
           <div className="cardsWrapper">
             {card}
           </div>
+          }
         </div>
       </div>
     );
