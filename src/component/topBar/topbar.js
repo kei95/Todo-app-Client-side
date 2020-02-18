@@ -6,13 +6,8 @@ import { faPlus, faBars } from '@fortawesome/free-solid-svg-icons'
 const topBar = (props) => {
     return(
         <div className='topbar'>
-            <div>
-                {
-                window.innerWidth > 400 ?
-                <span>{" "}</span>
-                :
+            <div onClick={props.onClick}>
                 <FontAwesomeIcon style={{width: '1.3rem', height: '1.3rem'}} icon={faBars}/>
-                }
             </div>
             <h1 className='text'>TODO LIST</h1>
             <div className="iconSquare">

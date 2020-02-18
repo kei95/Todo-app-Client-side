@@ -1,18 +1,19 @@
 import React from 'react';
+import axios from 'axios';
+
 import './App.css';
 import Topbar from '../../component/topBar/topbar'
 import Card from '../../component/card/card'
-import axios from 'axios';
+import SideBar from '../../component/sideBar/sideBar'
 
 export default class App extends React.Component {
-
   state = {
-    tasks: []
+    tasks: [],
+    isSlideBarOpen: false
   }
 
   componentDidMount = async() => {
     await this.getTodos();
-    console.log(window.innerWidth)
   }
 
   getTodos = async () => {
@@ -20,14 +21,18 @@ export default class App extends React.Component {
     this.setState({tasks: res.data})
   }
 
+  onSideBarClick = () => {
+    this.setState({isSlideBarOpen: !this.state.isSlideBarOpen})
+  }
   
   render(){
-    // const card = this.state.tasks.map(data =><div id={data.id}><Card title={data.title} text={data.text}/></div>)
-    const card = data.map(data =><div id={data.id}><Card title={data.title} text={data.text}/></div>)
-    console.log(this.state)
+    const card = this.state.tasks.map(data =>(
+    <div key={data.id}><Card title={data.title} text={data.text}/></div>))
+    console.log(window.innerWidth)
     return (
       <div className="App">
-        <Topbar />
+        <SideBar onClick={this.onSideBarClick} isSlideBarOpen={this.state.isSlideBarOpen} />
+        <Topbar onClick={this.onSideBarClick} />
         <div className='body'>
           {
             !card ?
@@ -44,21 +49,3 @@ export default class App extends React.Component {
     );
   }
 }
-
-const data = [
-  {
-    title: 'learn react',
-    text: 'you have to do this to get better job',
-    id: 1
-  },
-  {
-    title: 'learn sql',
-    text: 'you have to do this to be a fullstuck developer',
-    id: 2
-  },
-  {
-    title: 'asdjfdspafhuihjafljsdhhfiy8978954375892758943jifdsafjpdsi',
-    text: 'you have to do this to be a fullstuck developer',
-    id: 3
-  },
-]
